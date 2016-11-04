@@ -1,0 +1,12 @@
+
+# Only track LaTeX source (.tex) and style (.sty) files
+
+# 1. Ignore everything
+*
+
+# 2. Track LaTeX files
+!*.tex
+!*.sty
+
+# 3. Track this .gitignore file
+!.gitignore
