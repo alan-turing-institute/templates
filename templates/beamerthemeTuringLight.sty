@@ -1,0 +1,44 @@
+\mode<presentation>
+
+% Requirement
+\RequirePackage{tikz}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+% Settings
+\geometry{papersize={508mm,286mm}}
+\geometry{hmargin=0px}
+\geometry{vmargin=0px}
+\geometry{head=0px}
+\geometry{headsep=0px}
+\geometry{hoffset=0px}
+\geometry{voffset=0px}
+\geometry{top=0px}
+\geometry{tmargin=0px}
+\geometry{headheight=0px}
+
+
+\newlength{\gridblock}
+\setlength{\gridblock}{0.0476\paperwidth}
+\geometry{foot=\gridblock}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\usepackage{ccfonts}
+
+\setbeamerfont{title}{size={\fontsize{110pt}{110pt}}}
+\setbeamerfont{subtitle}{size={\fontsize{70pt}{70pt}}}
+
+% Themes
+\useinnertheme{TuringLight}
+%\useoutertheme{TuringLight}
+\usecolortheme{TuringLight}
+
+\usefonttheme{professionalfonts}
+
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
+\mode<all>

@@ -1,0 +1,36 @@
+\mode<presentation>
+
+\setbeamertemplate{background}{
+	\begin{tikzpicture}
+	\useasboundingbox (0,0) rectangle(\paperwidth,\paperheight);
+	\fill[color=slidebg] (0,0) rectangle (\paperwidth,\paperheight);
+	\ifnum\thepage>1\relax%
+		\fill[slidebg,opacity=1] (0,0) rectangle(\paperwidth,\paperheight);
+	\fi
+	\end{tikzpicture}
+}
+
+% Title page
+\defbeamertemplate*{title page}{texsx}[1][]
+{ 
+	\vskip0.9\gridblock
+	 \begin{beamercolorbox}[wd=15\gridblock,leftskip=\gridblock,sep=0px,#1]{logo}
+    		\includegraphics[height=1.4\gridblock]{ATI_logo_white.eps}
+	\end{beamercolorbox}
+	\vskip1.75\gridblock
+	\begin{beamercolorbox}[wd=15\gridblock,leftskip=\gridblock,sep=0px,#1]{logo}
+		\begin{tikzpicture}
+			\fill[color=line] (0,0) rectangle(15\gridblock,0.08\gridblock);
+		\end{tikzpicture}
+    \end{beamercolorbox}%
+	\vskip0.35\gridblock
+    \begin{beamercolorbox}[wd=15\gridblock,leftskip=\gridblock,sep=0px,#1]{title page header}
+      \usebeamerfont{title}\inserttitle\par%
+    \end{beamercolorbox}%
+	\vskip0.3\gridblock
+    \begin{beamercolorbox}[wd=15\gridblock,leftskip=\gridblock,sep=0px,#1]{title page header}
+      \usebeamerfont{subtitle}\insertsubtitle\par%
+    \end{beamercolorbox}%
+  \vfill
+}
+
