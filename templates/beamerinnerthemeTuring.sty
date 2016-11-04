@@ -1,9 +1,12 @@
 \mode<presentation>
 
+\institute{The Alan Turing Institute}
+
 \setbeamertemplate{background}{
 	\begin{tikzpicture}
 	\useasboundingbox (0,0) rectangle(\paperwidth,\paperheight);
-	\fill[color=slidebg] (0,0) rectangle (\paperwidth,\paperheight);
+	\fill[color=cornerleaf] (0,0) rectangle (\paperwidth,\paperheight);
+	\draw[fill=slidebg] (0,0) -- (0 ,\paperheight) -- (8.75\gridblock,\paperheight) -- (16.5\gridblock,7.6\gridblock) -- (\paperwidth,0.9\gridblock) -- (\paperwidth,0) -- cycle;	
 	\ifnum\thepage>1\relax%
 		\fill[slidebg,opacity=1] (0,0) rectangle(\paperwidth,\paperheight);
 	\fi
@@ -20,7 +23,7 @@
 	\vskip1.75\gridblock
 	\begin{beamercolorbox}[wd=15\gridblock,leftskip=\gridblock,sep=0px,#1]{logo}
 		\begin{tikzpicture}
-			\fill[color=line] (0,0) rectangle(15\gridblock,0.08\gridblock);
+			\fill[color=line] (0,0) rectangle(19\gridblock,0.08\gridblock);
 		\end{tikzpicture}
     \end{beamercolorbox}%
 	\vskip0.35\gridblock
@@ -33,4 +36,24 @@
     \end{beamercolorbox}%
   \vfill
 }
+
+% Footer (all pages)
+\setbeamertemplate{footline}{
+{%
+\begin{beamercolorbox}[wd=\paperwidth,leftskip=\gridblock,dp=0.7\gridblock]{footerline}
+	\begin{tikzpicture}
+		\fill[color=line] (0,0) rectangle(19\gridblock,0.03\gridblock);
+	\end{tikzpicture}
+	\vskip0.2\gridblock
+%	\begin{columns}[T]
+%		\begin{column}{2\gridblock}
+%			\insertdate
+%		\end{column}
+%		\begin{column}{15\gridblock}
+%			\insertinstitute
+%		\end{column}
+%	\end{columns}
+\insertdate\hskip\gridblock\insertinstitute
+\end{beamercolorbox}
+}}
 
