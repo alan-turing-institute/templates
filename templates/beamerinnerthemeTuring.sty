@@ -40,22 +40,24 @@
 % Footer (all pages)
 \setbeamertemplate{footline}{
 {%
-\begin{beamercolorbox}[wd=\paperwidth,leftskip=\gridblock,dp=0.4\gridblock]{footerline}
+\begin{beamercolorbox}[wd=19\gridblock,leftskip=\gridblock,dp=0.7\gridblock]{footerline}
 	\begin{tikzpicture}
 		\fill[color=line] (0,0) rectangle(19\gridblock,0.03\gridblock);
 	\end{tikzpicture}
-	\vskip0.2\gridblock
-%	\begin{columns}[T]
-%		\begin{column}{2\gridblock}
-%			\insertdate
-%		\end{column}
-%		\begin{column}{15\gridblock}
-%			\insertinstitute
-%		\end{column}
-%	\end{columns}
-\insertdate\hskip\gridblock\insertinstitute
-\vskip0.5\footerfontsize
-\inserttitle
+	\vskip\footerfontsize
+	\begin{columns}[T]
+		\begin{column}{\gridblock}
+			% dummy column to align footer text with footer divider
+		\end{column}%
+		\begin{column}{3\gridblock}
+			\hskip0.5\gridblock\insertdate
+		\end{column}%
+		\begin{column}{18\gridblock}
+			\insertinstitute
+			\vskip0.5\footerfontsize
+			\inserttitle
+		\end{column}%
+	\end{columns}
 \end{beamercolorbox}
 }}
 
