@@ -8,7 +8,11 @@
 
 % Settings
 \geometry{papersize={508mm,286mm}}
-\geometry{hmargin=0px}
+
+\newlength{\gridblock}
+\setlength{\gridblock}{0.0476\paperwidth}
+
+\geometry{hmargin=\gridblock}
 \geometry{vmargin=0px}
 \geometry{head=0px}
 \geometry{headsep=0px}
@@ -18,9 +22,6 @@
 \geometry{tmargin=0px}
 \geometry{headheight=0px}
 \geometry{foot=0px}
-
-\newlength{\gridblock}
-\setlength{\gridblock}{0.0476\paperwidth}
 
 
 \usepackage[utf8]{inputenc}
@@ -32,22 +33,55 @@
 \setlength{\titlefontsize}{110pt}
 \newlength{\subtitlefontsize}
 \setlength{\subtitlefontsize}{70pt}
+\newlength{\frametitlesize}
+\setlength{\frametitlesize}{42pt}
+\newlength{\framesubtitlesize}
+\setlength{\framesubtitlesize}{26pt}
+
+\newlength{\bodytext}
+\setlength{\bodytext}{32pt}
+
 \newlength{\footerfontsize}
 \setlength{\footerfontsize}{16pt}
-\setbeamerfont{title}{size={\fontsize{\titlefontsize}{\titlefontsize}}}
-\setbeamerfont{subtitle}{size={\fontsize{\subtitlefontsize}{\subtitlefontsize}}}
-\setbeamerfont{footline}{series=\mdseries,size={\fontsize{\footerfontsize}{\footerfontsize}}}
+
+\newcommand{\lineheightmultiplier}{1.5}
+
+\setbeamerfont{title}{size={\fontsize{\titlefontsize}{\lineheightmultiplier\titlefontsize}}}
+\setbeamerfont{subtitle}{size={\fontsize{\subtitlefontsize}{\lineheightmultiplier\subtitlefontsize}}}
+\setbeamerfont{frametitle}{series=\bfseries,size={\fontsize{\frametitlesize}{\lineheightmultiplier\frametitlesize}}}
+\setbeamerfont{framesubtitle}{series=\bfseries,size={\fontsize{\framesubtitlesize}{\lineheightmultiplier\framesubtitlesize}}}
+\setbeamerfont{footline}{series=\mdseries,size={\fontsize{\footerfontsize}{\lineheightmultiplier\footerfontsize}}}
+
+
+% 
+\setbeamerfont{block title}{series=\bfseries,size={\fontsize{\bodytext}{\lineheightmultiplier\bodytext}}}
+\setbeamerfont{block body}{series=\mdseries,size={\fontsize{\bodytext}{\lineheightmultiplier\bodytext}}}
+\setbeamerfont*{block itemize/enumerate body}{size=\fontsize{\bodytext}{\lineheightmultiplier\bodytext}}
+\setbeamerfont*{itemize/enumerate subbody}{parent=itemize/enumerate body}
+\setbeamerfont*{itemize/enumerate subsubbody}{parent=itemize/enumerate body}
+
+\setbeamertemplate{itemize item}{\raisebox{0.3ex}{$\blacktriangleright$}}%
+\setbeamertemplate{itemize item}{\raisebox{0.3ex}{$\blacktriangleright$}}%
+\setbeamertemplate{itemize subitem}{\raisebox{0.3ex}{$\blacktriangleright$}}%
+\setbeamertemplate{itemize subsubitem}{\raisebox{0.3ex}{$\blacktriangleright$}}%
 
 \usefonttheme{professionalfonts}
 
 \setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{blocks}[rounded][shadow=true]
+
+\defbeamertemplate{frame numbering}{counter}{\insertframenumber}
 
 % Set colours from beamer colour theme
-\setbeamercolor*{normal text}{fg=text}
 \setbeamercolor*{title page header}{fg=text}
+\setbeamercolor*{frametitle}{fg=text}
+\setbeamercolor*{block title}{fg=text}
+\setbeamercolor*{block body}{fg=text}
+\setbeamercolor*{normal text}{fg=text}
 \setbeamercolor*{author}{fg=text}
 \setbeamercolor*{date}{fg=text}
 \setbeamercolor*{footline}{fg=text}
+\setbeamercolor*{item}{fg=text}
+
+
 
 \mode<all>

@@ -1,17 +1,76 @@
 \documentclass[t]{beamer}
 
+\usetheme{TuringLight}
+%\usetheme{TuringDark}
+
+% Presentation data
 \title{Presentation title}
 \subtitle{Presentation subtitle}
 \date{Date}
 \author{Author name(s)}
 
-\usetheme{TuringDark}
-%\usetheme{TuringLight}
+% Uncomment line below to set custom size for main slide text (default is 32pt)
+%\setlength{\bodytext}{32pt}
 
+% Start document
 \begin{document}
 
+% Title page (details filled from presentation data above)
 \begin{frame}
-\titlepage
+	\titlepage
+\end{frame}
+
+% Skeleton single-column page
+\begin{frame}{Page title}
+	\begin{block}{Block title}
+  		Body copy
+  		\begin{itemize}    
+  			\item Level 1 bullet
+			\begin{itemize}
+					\item Level 2 bullet
+					\begin{itemize}
+						\item Level 3 bullet
+					\end{itemize}
+			\end{itemize}
+  			\item Item Level 1 bullet 2
+  		\end{itemize}    
+	\end{block}
+\end{frame}
+
+% Skeleton double-column page (two text columns)
+\begin{frame}{Page title}
+	\begin{columns}[T,totalwidth=\textwidth]
+  		\begin{column}{0.45\textwidth}
+  			\begin{block}{Block 1 title}
+    				Body copy
+    				\begin{itemize}    
+    					\item Level 1 bullet
+  					\begin{itemize}
+  						\item Level 2 bullet
+  						\begin{itemize}
+  							\item Level 3 bullet
+  						\end{itemize}
+  					\end{itemize}
+    					\item Item Level 1 bullet 2
+    				\end{itemize}  
+			\end{block}
+  		\end{column} %
+  		\begin{column}{0.45\textwidth}
+  			\begin{block}{Block 2 title}
+    				Body copy
+    				\begin{itemize}    
+    					\item Level 1 bullet
+  					\begin{itemize}
+  						\item Level 2 bullet
+  						\begin{itemize}
+  							\item Level 3 bullet
+  						\end{itemize}
+  					\end{itemize}
+    					\item Item Level 1 bullet 2
+    				\end{itemize}  
+			\end{block}
+  		\end{column}%
+	\end{columns}
 \end{frame}
 
 

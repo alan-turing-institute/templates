@@ -6,7 +6,7 @@
 	\begin{tikzpicture}
 	\useasboundingbox (0,0) rectangle(\paperwidth,\paperheight);
 	\fill[color=cornerleaf] (0,0) rectangle (\paperwidth,\paperheight);
-	\draw[fill=slidebg] (0,0) -- (0 ,\paperheight) -- (8.75\gridblock,\paperheight) -- (16.5\gridblock,7.6\gridblock) -- (\paperwidth,0.9\gridblock) -- (\paperwidth,0) -- cycle;	
+	\draw[fill=slidebg,color=slidebg] (0,0) -- (0 ,\paperheight) -- (8.75\gridblock,\paperheight) -- (16.5\gridblock,7.2\gridblock) -- (\paperwidth,1.2\gridblock) -- (\paperwidth,0) -- cycle;	
 	\ifnum\thepage>1\relax%
 		\fill[slidebg,opacity=1] (0,0) rectangle(\paperwidth,\paperheight);
 	\fi
@@ -17,47 +17,59 @@
 \defbeamertemplate*{title page}{texsx}[1][]
 { 
 	\vskip0.9\gridblock
-	 \begin{beamercolorbox}[wd=15\gridblock,leftskip=\gridblock,sep=0px,#1]{logo}
-    		\includegraphics[height=1.4\gridblock]{ATI_logo_white.eps}
+	 \begin{beamercolorbox}[wd=\textwidth,leftskip=0\textwidth,sep=0px,#1]{logo}
+    		\includegraphics[height=1.4\gridblock]{\logofilename}
 	\end{beamercolorbox}
 	\vskip1.75\gridblock
-	\begin{beamercolorbox}[wd=15\gridblock,leftskip=\gridblock,sep=0px,#1]{logo}
+	\begin{beamercolorbox}[wd=\textwidth,leftskip=0\textwidth,sep=0px,#1]{logo}
 		\begin{tikzpicture}
-			\fill[color=line] (0,0) rectangle(19\gridblock,0.08\gridblock);
+			\fill[color=line] (0,0) rectangle(0.9\textwidth,0.05\gridblock);
 		\end{tikzpicture}
     \end{beamercolorbox}%
 	\vskip0.35\gridblock
-    \begin{beamercolorbox}[wd=15\gridblock,leftskip=\gridblock,sep=0px,#1]{title page header}
+    \begin{beamercolorbox}[wd=\textwidth,leftskip=0\textwidth,sep=0px,#1]{title page header}
       \usebeamerfont{title}\inserttitle\par%
     \end{beamercolorbox}%
 	\vskip0.3\gridblock
-    \begin{beamercolorbox}[wd=15\gridblock,leftskip=\gridblock,sep=0px,#1]{title page header}
+    \begin{beamercolorbox}[wd=\textwidth,leftskip=0\textwidth,sep=0px,#1]{title page header}
       \usebeamerfont{subtitle}\insertsubtitle\par%
     \end{beamercolorbox}%
   \vfill
 }
 
+% Page title
+\setbeamertemplate{frametitle}
+{
+	\begin{beamercolorbox}[wd=\textwidth,leftskip=0\textwidth]{frametitle}
+		\insertframetitle\par
+	\end{beamercolorbox}%
+}
+\addtobeamertemplate{frametitle}{\vspace*{0.6\gridblock}}{\vspace*{\gridblock}}
+
 % Footer (all pages)
 \setbeamertemplate{footline}{
 {%
-\begin{beamercolorbox}[wd=19\gridblock,leftskip=\gridblock,dp=0.7\gridblock]{footerline}
+\begin{beamercolorbox}[wd=0.9\textwidth,leftskip=0.05\textwidth,dp=0.7\gridblock]{footerline}
 	\begin{tikzpicture}
-		\fill[color=line] (0,0) rectangle(19\gridblock,0.03\gridblock);
+		\fill[color=line] (0,0) rectangle(19\gridblock,0.015\gridblock);
 	\end{tikzpicture}
 	\vskip\footerfontsize
-	\begin{columns}[T]
-		\begin{column}{\gridblock}
-			% dummy column to align footer text with footer divider
+	\begin{columns}[T,totalwidth=\textwidth]
+		\begin{column}{0.015\textwidth}
 		\end{column}%
-		\begin{column}{3\gridblock}
+		\begin{column}{0.15\textwidth}
 			\hskip0.5\gridblock\insertdate
 		\end{column}%
-		\begin{column}{18\gridblock}
+		\begin{column}{0.75\textwidth}
 			\insertinstitute
 			\vskip0.5\footerfontsize
 			\inserttitle
 		\end{column}%
+		\begin{column}{0.05\textwidth}
+			\insertframenumber
+		\end{column}%
 	\end{columns}
 \end{beamercolorbox}
 }}
+
 
