@@ -28,9 +28,15 @@
 \usepackage{helvet}
 \usepackage{ccfonts}
 
-\setbeamerfont{title}{size={\fontsize{110pt}{110pt}}}
-\setbeamerfont{subtitle}{size={\fontsize{70pt}{70pt}}}
-\setbeamerfont{footline}{series=\mdseries,size={\fontsize{16pt}{16pt}}}
+\newlength{\titlefontsize}
+\setlength{\titlefontsize}{110pt}
+\newlength{\subtitlefontsize}
+\setlength{\subtitlefontsize}{70pt}
+\newlength{\footerfontsize}
+\setlength{\footerfontsize}{16pt}
+\setbeamerfont{title}{size={\fontsize{\titlefontsize}{\titlefontsize}}}
+\setbeamerfont{subtitle}{size={\fontsize{\subtitlefontsize}{\subtitlefontsize}}}
+\setbeamerfont{footline}{series=\mdseries,size={\fontsize{\footerfontsize}{\footerfontsize}}}
 
 \usefonttheme{professionalfonts}
 

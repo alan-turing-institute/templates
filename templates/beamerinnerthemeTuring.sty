@@ -40,7 +40,7 @@
 % Footer (all pages)
 \setbeamertemplate{footline}{
 {%
-\begin{beamercolorbox}[wd=\paperwidth,leftskip=\gridblock,dp=0.7\gridblock]{footerline}
+\begin{beamercolorbox}[wd=\paperwidth,leftskip=\gridblock,dp=0.4\gridblock]{footerline}
 	\begin{tikzpicture}
 		\fill[color=line] (0,0) rectangle(19\gridblock,0.03\gridblock);
 	\end{tikzpicture}
@@ -54,6 +54,8 @@
 %		\end{column}
 %	\end{columns}
 \insertdate\hskip\gridblock\insertinstitute
+\vskip0.5\footerfontsize
+\inserttitle
 \end{beamercolorbox}
 }}
 
