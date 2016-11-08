@@ -15,13 +15,13 @@
 % Start document
 \begin{document}
 
-% Title page (details filled from presentation data above)
+% Title slide (details filled from presentation data fields above)
 \begin{frame}
 	\titlepage
 \end{frame}
 
-% Skeleton single-column page
-\begin{frame}{Page title}
+% Skeleton single-column text slide
+\begin{frame}{Single column text page title}
 	\begin{block}{Block title}
   		Body copy
   		\begin{itemize}    
@@ -37,8 +37,8 @@
 	\end{block}
 \end{frame}
 
-% Skeleton double-column page (two text columns)
-\begin{frame}{Page title}
+% Skeleton double-column text slide (two text columns)
+\begin{frame}{Double column text page title}
 	\begin{columns}[T,totalwidth=\textwidth]
   		\begin{column}{0.45\textwidth}
   			\begin{block}{Block 1 title}
@@ -73,5 +73,31 @@
 	\end{columns}
 \end{frame}
 
+% Skeleton double-column text and image slide (left-hand text column, right-hand image)
+\begin{frame}{Double column text and image page title}
+	\begin{columns}[T,totalwidth=\textwidth]
+  		\begin{column}{0.45\textwidth}
+  			\begin{block}{Block 1 title}
+    				Body copy
+    				\begin{itemize}    
+    					\item Level 1 bullet
+  					\begin{itemize}
+  						\item Level 2 bullet
+  						\begin{itemize}
+  							\item Level 3 bullet
+  						\end{itemize}
+  					\end{itemize}
+    					\item Item Level 1 bullet 2
+    				\end{itemize}  
+			\end{block}
+  		\end{column} %
+  		\begin{column}{0.45\textwidth}
+			\begin{figure}
+				\vspace{-1.5\frametitlesize}
+				\includegraphics[height=\textwidth,keepaspectratio]{drawing-on-glass.jpg}
+			\end{figure}
+  		\end{column}%
+	\end{columns}
+\end{frame}
 
 \end{document}
