@@ -44,19 +44,21 @@
 \newlength{\footerfontsize}
 \setlength{\footerfontsize}{16pt}
 
-\newcommand{\lineheightmultiplier}{1.3}
+\newcommand{\headinglineheightmultiplier}{1.2}
+\newcommand{\bodylineheightmultiplier}{1.4}
 
 \setbeamerfont{title}{size={\fontsize{\titlefontsize}{\titlefontsize}}}
 \setbeamerfont{subtitle}{size={\fontsize{\subtitlefontsize}{\subtitlefontsize}}}
 \setbeamerfont{frametitle}{series=\bfseries,size={\fontsize{\frametitlesize}{\frametitlesize}}}
+\setbeamerfont{imprint}{series=\mdseries,size={\fontsize{\frametitlesize}{\headinglineheightmultiplier\frametitlesize}}}
 \setbeamerfont{framesubtitle}{series=\bfseries,size={\fontsize{\framesubtitlesize}{\framesubtitlesize}}}
 \setbeamerfont{footline}{series=\mdseries,size={\fontsize{\footerfontsize}{\footerfontsize}}}
 
 
 % 
-\setbeamerfont{block title}{series=\bfseries,size={\fontsize{\bodytext}{\lineheightmultiplier\bodytext}}}
-\setbeamerfont{block body}{series=\mdseries,size={\fontsize{\bodytext}{\lineheightmultiplier\bodytext}}}
-\setbeamerfont*{block itemize/enumerate body}{size=\fontsize{\bodytext}{\lineheightmultiplier\bodytext}}
+\setbeamerfont{block title}{series=\bfseries,size={\fontsize{\bodytext}{\bodylineheightmultiplier\bodytext}}}
+\setbeamerfont{block body}{series=\mdseries,size={\fontsize{\bodytext}{\bodylineheightmultiplier\bodytext}}}
+\setbeamerfont*{block itemize/enumerate body}{size=\fontsize{\bodytext}{\bodylineheightmultiplier\bodytext}}
 \setbeamerfont*{itemize/enumerate subbody}{parent=itemize/enumerate body}
 \setbeamerfont*{itemize/enumerate subsubbody}{parent=itemize/enumerate body}
 
