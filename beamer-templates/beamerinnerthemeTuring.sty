@@ -37,6 +37,22 @@
   \vfill
 }
 
+% Section diveder page
+\AtBeginSection[]{
+	\begin{frame}
+		\vskip3.5\gridblock
+		\begin{beamercolorbox}[wd=\textwidth,leftskip=0\textwidth,sep=0px]{logo}
+			\begin{tikzpicture}
+				\fill[color=line] (0,0) rectangle(\textwidth,0.05\gridblock);
+			\end{tikzpicture}
+    		\end{beamercolorbox}%
+		\vskip0.35\gridblock
+    		\begin{beamercolorbox}[wd=\textwidth,leftskip=0\textwidth,sep=0px]{}
+     	\usebeamerfont{subtitle}\insertsectionhead\par%
+    		\end{beamercolorbox}%
+	\end{frame}
+}
+
 % Page title
 \setbeamertemplate{frametitle}
 {
