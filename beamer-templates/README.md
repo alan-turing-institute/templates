@@ -12,7 +12,7 @@ You can use the templates without installing them by copying the following **\*.
  - **beamercolorthemeTuring** should be copied to the **colorthemes** subfolder
 
 ## Usage
-- Copy the **Turing-skeleton-example.tex** file as the base for your presentation. You should copy the **images** folder with the ATI logos to the same location as **Turing-skeleton-example.tex**.
+- Copy the **Turing-skeleton-example.tex** file as the base for your presentation. You should also copy the **images** folder with the ATI logos to the folder containing your presentation.
 - Choose the light or dark theme by retaining either **\\usetheme{TuringLight}** or **\\usetheme{TuringDark}** (make sure to uncomment your chosen theme if necessary by removing any leading **"%"** at the start of the line. Delete or comment out the other theme (you can comment a line out by placing a **"%"** at the start of the line).
 - Set the presentation **title**, **subtitle** and **date** within the curly braces of the **\\title{}**, **\\subtitle{}** and **\\date{}** fields. Note that the **\\author{}** field is not used in the ATI template.
 - Create your text-based slides following either the single-column or double-column page example skeletons.
