@@ -1,7 +1,11 @@
 # Beamer Templates
 Beamer templates for producing presentations in LaTeX that match ATI house style.
+
+## Getting the template files
+Download the files from the template directory, using the "clone or download" button located to the upper left.
+
 ## Installation
-Download the files from the template directory, using the "clone or download" button located to the upper left. Copy the following **\*.sty** files to the corresponding subfolders in your Beamer themes directory:
+You can use the templates without installing them by copying the following **\*.sty** files to the folder containing your presentation. If you want to install the template for easier use across multiple presentations, copy the following **\*.sty** files to the corresponding subfolders in your Beamer themes directory:
  - **beamerthemeTuring.sty** should be copied to the **themes** subfolder
  - **beamerouterthemeTuring** should be copied to the **outerthemes** subfolder
  - **beamerinnerthemeTuring** should be copied to the **innerthemes** subfolder
