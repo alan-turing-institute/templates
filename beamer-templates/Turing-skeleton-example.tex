@@ -1,4 +1,5 @@
 \documentclass[t]{beamer}
+
 \usetheme{TuringLight}
 %\usetheme{TuringDark}
 
@@ -20,25 +21,8 @@
 \end{frame}
 
 % Imprint slide (e.g. about the institute / opening quote)
-\begin{frame}	
-		\vskip0.6\gridblock
-		\begin{beamercolorbox}[wd=\textwidth,leftskip=0\textwidth,sep=0px]{logo}
-			\begin{tikzpicture}
-				\fill[color=line] (0,0) rectangle(\textwidth,0.05\gridblock);
-			\end{tikzpicture}
-    		\end{beamercolorbox}%
-		\vskip0.35\gridblock
-    		\begin{beamercolorbox}[wd=0.6\textwidth,leftskip=0\textwidth,sep=0px]{}
-		\usebeamerfont{imprint}%
-     		The Alan Turing Institute is the 			national centre for data science, 			headquartered at the British Library.
-    		\end{beamercolorbox}%
-		\vfill\vfill\vfill\vfill
-    		\begin{beamercolorbox}[wd=\textwidth,leftskip=0\textwidth,sep=0px]{}
-			\begin{figure}
-				\includegraphics[width=\textwidth,keepaspectratio]{sponsor-logos-banner.png}%				
-				%\includegraphics[width=\textwidth,keepaspectratio]{sponsor-logos-individual-borders.png}%May be preferred for dark theme
-			\end{figure}
-    		\end{beamercolorbox}%
+\begin{frame}
+	\imprintpage
 \end{frame}
 
 % Section divider slide
@@ -116,26 +100,17 @@
 			\end{block}
   		\end{column} %
   		\begin{column}{0.45\textwidth}
-			\vspace{-1.5\frametitlesize}
 			\begin{figure}
-				\includegraphics[height=\textwidth,keepaspectratio]{drawing-on-glass.jpg}
+				\vspace{-\blocktitlesize}
+				\includegraphics[height=0.65\paperheight,keepaspectratio]{drawing-on-glass.jpg}
 			\end{figure}
   		\end{column}%
 	\end{columns}
 \end{frame}
 
-% End slide ()
+% End slide 
 \begin{frame}	
-		\vskip0.6\paperheight
-		\begin{beamercolorbox}[wd=\textwidth,leftskip=0\textwidth,sep=0px]{logo}
-			\begin{tikzpicture}
-				\fill[color=line] (0,0) rectangle(0.45\textwidth,0.05\gridblock);
-			\end{tikzpicture}
-    		\end{beamercolorbox}%
-		\vskip0.35\gridblock
-    		\begin{beamercolorbox}[wd=0.45\textwidth,leftskip=0\textwidth,sep=0px]{}
-			\usebeamerfont{imprint}turing.ac.uk\par\text{@turinginst}
-    		\end{beamercolorbox}%
+	\finalpage
 \end{frame}
 
 \end{document}
