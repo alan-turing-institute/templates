@@ -2,7 +2,7 @@
 Beamer templates for producing presentations in LaTeX that match ATI house style.
 
 ## Getting the template files
-Download a \*.zip file with all template files from [here](https://github.com/alan-turing-institute/templates/releases/tags/v0.1). The Beamer templates are in the **beamer-templates** subfolder. Alternatively, you can clone this repository using Git (use the **latest-stable** branch if you don't want to be exposed to random changes).
+Download a \*.zip file with all template files from [here](https://github.com/alan-turing-institute/templates/releases/tag/v0.1). The Beamer templates are in the **beamer-templates** subfolder. Alternatively, you can clone this repository using Git (use the **latest-stable** branch if you don't want to be exposed to random changes).
 
 ## Installation
 You can use the templates without installing them by copying the following **\*.sty** files to the folder containing your presentation. If you want to install the template for easier use across multiple presentations, copy the following **\*.sty** files to the corresponding subfolders in your Beamer themes directory:
