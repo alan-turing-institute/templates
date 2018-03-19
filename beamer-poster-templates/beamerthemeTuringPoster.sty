@@ -1,0 +1,163 @@
+\ProvidesPackage{beamerthemeTuringPoster}%
+[2018/03/19 v0.1 Alan Turing beamer poster style]
+
+\mode<presentation>
+
+\usepackage{helvet}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Colour definitions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamercolor{lower separation line head}{fg=black}
+\setbeamercolor{upper separation line foot}{fg=black}
+\setbeamercolor{lower separation line foot}{fg=black}
+
+\usecolortheme[named=black]{structure}
+\setbeamercolor{block title}{bg=white, fg=structure}
+\setbeamercolor{block body}{bg=white}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Inner Theme
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\useinnertheme{rectangles}
+\setbeamertemplate{navigation symbols}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ITEMS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Itemize options
+\setlength\labelsep{\dimexpr\labelsep + 1.5em\relax}  
+\setlength\leftmargini{\dimexpr\leftmargini + 3.5em\relax}
+\setlength\leftmarginii{\dimexpr\leftmarginii + 2.5em\relax}
+
+\setbeamertemplate{itemize items}[square]
+%\setbeamertemplate{itemize item}{\raisebox{0.0ex}{$\Box$}\hskip0.1em}
+\setbeamertemplate{itemize subitem}{\raisebox{0.0ex}{$-$}\hskip0.0em}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Set \emph command to specified colour.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\myemph}[1]{{\bfseries #1}}
+\let\emph\myemph
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Image declarations
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pgfdeclareimage[width=12cm]{main-logo}{./ATI_logo_black.pdf}
+\titlegraphic{\pgfuseimage{main-logo}}
+
+%%%%%%%
+% Font
+%%%%%%%
+\newlength{\basefontsize}
+\setlength{\basefontsize}{0.08\paperheight}
+
+\newlength{\titlefontsize}
+\setlength{\titlefontsize}{6.875\basefontsize}
+\newlength{\subtitlefontsize}
+\setlength{\subtitlefontsize}{4.375\basefontsize}
+\newlength{\frametitlesize}
+\setlength{\frametitlesize}{2.625\basefontsize}
+\newlength{\framesubtitlesize}
+\setlength{\framesubtitlesize}{1.625\basefontsize}
+
+\newlength{\bodytextsize}
+\setlength{\bodytextsize}{2\basefontsize}
+\newlength{\blocktitlesize}
+\setlength{\blocktitlesize}{\bodytextsize}
+\newlength{\blockbodysize}
+\setlength{\blockbodysize}{\bodytextsize}
+
+\newlength{\footerfontsize}
+\setlength{\footerfontsize}{\basefontsize}
+
+\newcommand{\headinglineheightmultiplier}{1.2}
+\newcommand{\bodylineheightmultiplier}{1.4}
+
+\setbeamerfont{title}{size={\fontsize{\titlefontsize}{\titlefontsize}}}
+\setbeamerfont{subtitle}{size={\fontsize{\subtitlefontsize}{\subtitlefontsize}}}
+\setbeamerfont{frametitle}{series=\bfseries,size={\fontsize{\frametitlesize}{\frametitlesize}}}
+\setbeamerfont{imprint}{series=\mdseries,size={\fontsize{\frametitlesize}{\headinglineheightmultiplier\frametitlesize}}}
+\setbeamerfont{imprint}{series=\mdseries,size={\fontsize{\frametitlesize}{\headinglineheightmultiplier\frametitlesize}}}
+\setbeamerfont{framesubtitle}{series=\bfseries,size={\fontsize{\framesubtitlesize}{\framesubtitlesize}}}
+\setbeamerfont{footline}{series=\mdseries,size={\fontsize{\footerfontsize}{\footerfontsize}}}
+
+
+% 
+\setbeamerfont{normal text}{series=\mdseries,size={\fontsize{\blockbodysize}{\bodylineheightmultiplier\blockbodysize}}}
+\setbeamerfont{block title}{series=\bfseries,size={\fontsize{\blocktitlesize}{\bodylineheightmultiplier\blocktitlesize}}}
+\setbeamerfont{block body}{series=\mdseries,size={\fontsize{\blockbodysize}{\bodylineheightmultiplier\blockbodysize}}}
+\setbeamerfont*{block itemize/enumerate body}{size=\fontsize{\blockbodysize}{\bodylineheightmultiplier\blockbodysize}}
+\setbeamerfont*{itemize/enumerate subbody}{parent=itemize/enumerate body}
+\setbeamerfont*{itemize/enumerate subsubbody}{parent=itemize/enumerate body}
+
+\usefonttheme{professionalfonts}
+
+\setbeamerfont{block title}{series=\bfseries}
+\setbeamerfont{block body}{series=\mdseries}
+
+\setbeamertemplate{itemize item}{--}%
+\setbeamertemplate{itemize item}{--}%
+\setbeamertemplate{itemize subitem}{--}%
+\setbeamertemplate{itemize subsubitem}{--}%
+
+\setbeamerfont{itemize/enumerate body}{series=\mdseries, 
+	size={\fontsize{\blockbodysize}{\bodylineheightmultiplier\blockbodysize}}}
+\setbeamerfont{itemize/enumerate subbody}{series=\mdseries, 
+	size={\fontsize{\blockbodysize}{\bodylineheightmultiplier\blockbodysize}}}
+\setbeamerfont{itemize/enumerate subsubbody}{series=\mdseries, 
+	size={\fontsize{\blockbodysize}{\bodylineheightmultiplier\blockbodysize}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Headline definitions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{headline}{
+	\leavevmode
+	\begin{beamercolorbox}[wd=\paperwidth]{headline}
+		\begin{columns}[T]
+			\begin{column}{.02\paperwidth}
+			\end{column}
+			\begin{column}{.10\paperwidth}
+				\vskip8ex
+				\begin{center}
+					\begin{flushleft}
+						\pgfuseimage{main-logo}
+					\end{flushleft}
+				\end{center}
+			\end{column}
+			\begin{column}{.76\paperwidth}
+				\vskip8ex
+				\begin{center}
+					\usebeamercolor{title in headline}{\color{fg}\textbf{\huge{\inserttitle}}\\[5ex]}
+					\usebeamercolor{author in headline}{\color{fg}\posterauthor}
+				\end{center}
+			\end{column}
+			\begin{column}{.10\paperwidth}
+				\vskip10ex
+			\end{column}
+			\begin{column}{.02\paperwidth}
+			\end{column}
+		\end{columns}
+		\vskip2ex
+	\end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Footline definitions
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{footline}{%
+	\leavevmode%
+	\begin{beamercolorbox}[ht=6ex, leftskip=1em, rightskip=1em]{footline}
+		\hspace{1cm}
+		\footerLeft
+		\hfill
+		\footerCenter
+		\hfill
+		\footerRight
+		\hspace{1cm}
+		\vskip1ex
+	\end{beamercolorbox}
+}
+
+\mode<all>
