@@ -2,7 +2,7 @@
 
 \mode<presentation>
 {
-	\usetheme{TuringPoster}
+	\usetheme{TuringPosterPortrait}
 }
 
 \usepackage{enumerate}
@@ -11,7 +11,10 @@
 
 \usepackage[orientation=portrait,size=a0,scale=1.4,debug]{beamerposter}
 
-\title{This is an Example Poster in the Turing Style}
+\setbeamercolor{block body}{bg=}
+\setbeamercolor{block title}{bg=}
+
+\title{This is an Example Poster in \\ the Turing Style}
 
 % Author definition in a separate command to allow minipage usage
 \newcommand{\posterauthor}{
@@ -21,7 +24,6 @@
 		Author 1\\[.5ex]
 		The Alan Turing Institute, London, UK
 	\end{minipage}
-	\hspace{10cm}
 	\begin{minipage}{30cm}
 		\centering
 		\large
@@ -117,6 +119,45 @@
 	\end{block}
 }
 
+\newcommand{\blockG}{%
+	\begin{block}{Block G}
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
+		do eiusmod tempor incididunt ut labore et dolore magna aliqua.  
+		Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+		laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
+		irure dolor in reprehenderit in voluptate velit esse cillum 
+		dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+		cupidatat non proident, sunt in culpa qui officia deserunt 
+		mollit anim id est laborum.
+	\end{block}
+}
+
+\newcommand{\blockH}{%
+	\begin{block}{Block H}
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
+		do eiusmod tempor incididunt ut labore et dolore magna aliqua.  
+		Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+		laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
+		irure dolor in reprehenderit in voluptate velit esse cillum 
+		dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+		cupidatat non proident, sunt in culpa qui officia deserunt 
+		mollit anim id est laborum.
+	\end{block}
+}
+
+\newcommand{\blockI}{%
+	\begin{block}{Block I}
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
+		do eiusmod tempor incididunt ut labore et dolore magna aliqua.  
+		Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+		laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
+		irure dolor in reprehenderit in voluptate velit esse cillum 
+		dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+		cupidatat non proident, sunt in culpa qui officia deserunt 
+		mollit anim id est laborum.
+	\end{block}
+}
+
 \begin{document}
 \begin{frame}
 	% Adjust this number to change distance between title and blocks
@@ -133,6 +174,10 @@
 			\vfill
 			\blockB
 			\vfill
+			\vskip\baselineskip
+			\vfill
+			\blockC
+			\vfill
 		\end{column}
 
 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -140,11 +185,15 @@
 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 		\begin{column}{.3\paperwidth}
 			\vfill
-			\blockC
+			\blockD
 			\vfill
 			\vskip\baselineskip
 			\vfill
-			\blockD
+			\blockE
+			\vfill
+			\vskip\baselineskip
+			\vfill
+			\blockF
 			\vfill
 		\end{column}
 
@@ -153,11 +202,15 @@
 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 		\begin{column}{.3\paperwidth}
 			\vfill
-			\blockE
+			\blockG
 			\vfill
 			\vskip\baselineskip
 			\vfill
-			\blockF
+			\blockH
+			\vfill
+			\vskip\baselineskip
+			\vfill
+			\blockI
 			\vfill
 		\end{column}
 	\end{columns}
