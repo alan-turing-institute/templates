@@ -1,0 +1,165 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{
+	\usetheme{TuringPoster}
+}
+
+\usepackage{enumerate}
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+
+\usepackage[orientation=landscape,size=a0,scale=1.4,debug]{beamerposter}
+
+\title{This is an Example Poster in the Turing Style}
+
+% Author definition in a separate command to allow minipage usage
+\newcommand{\posterauthor}{
+	\begin{minipage}{30cm}
+		\centering
+		\large
+		Author 1\\[.5ex]
+		The Alan Turing Institute, London, UK
+	\end{minipage}
+	\hspace{10cm}
+	\begin{minipage}{30cm}
+		\centering
+		\large
+		Author 2\\[.5ex]
+		The Alan Turing Institute, London, UK
+	\end{minipage}
+}
+
+% Use these commands to add text/images to the footer of the poster
+\newcommand{\footerLeft}{\large Left Foot}
+\newcommand{\footerCenter}{\large Center Foot}
+\newcommand{\footerRight}{\large Right Foot}
+
+
+% We use a command for each block, so it's easier to organize and move them 
+% around, but you don't have to do this of course
+
+\newcommand{\blockA}{%
+	\begin{block}{Block A}
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
+		do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+		Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+		laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
+		irure dolor in reprehenderit in voluptate velit esse cillum 
+		dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+		cupidatat non proident, sunt in culpa qui officia deserunt 
+		mollit anim id est laborum.
+	\end{block}
+}
+
+\newcommand{\blockB}{%
+	\begin{block}{Block B}
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
+		do eiusmod tempor incididunt ut labore et dolore magna aliqua.  
+		Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+		laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
+		irure dolor in reprehenderit in voluptate velit esse cillum 
+		dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+		cupidatat non proident, sunt in culpa qui officia deserunt 
+		mollit anim id est laborum.
+	\end{block}
+}
+
+\newcommand{\blockC}{%
+	\begin{block}{Block C}
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
+		do eiusmod tempor incididunt ut labore et dolore magna aliqua.  
+		Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+		laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
+		irure dolor in reprehenderit in voluptate velit esse cillum 
+		dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+		cupidatat non proident, sunt in culpa qui officia deserunt 
+		mollit anim id est laborum.
+	\end{block}
+}
+
+\newcommand{\blockD}{%
+	\begin{block}{Block D}
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
+		do eiusmod tempor incididunt ut labore et dolore magna aliqua.  
+		Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+		laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
+		irure dolor in reprehenderit in voluptate velit esse cillum 
+		dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+		cupidatat non proident, sunt in culpa qui officia deserunt 
+		mollit anim id est laborum.
+	\end{block}
+}
+
+\newcommand{\blockE}{%
+	\begin{block}{Block E}
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
+		do eiusmod tempor incididunt ut labore et dolore magna aliqua.  
+		Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+		laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
+		irure dolor in reprehenderit in voluptate velit esse cillum 
+		dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+		cupidatat non proident, sunt in culpa qui officia deserunt 
+		mollit anim id est laborum.
+	\end{block}
+}
+
+\newcommand{\blockF}{%
+	\begin{block}{Block F}
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
+		do eiusmod tempor incididunt ut labore et dolore magna aliqua.  
+		Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+		laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
+		irure dolor in reprehenderit in voluptate velit esse cillum 
+		dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+		cupidatat non proident, sunt in culpa qui officia deserunt 
+		mollit anim id est laborum.
+	\end{block}
+}
+
+\begin{document}
+\begin{frame}
+	% Adjust this number to change distance between title and blocks
+	\vskip-1cm
+	\begin{columns}[t]
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%                          COLUMN 1                          %
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\begin{column}{.3\paperwidth}
+			\vfill
+			\blockA
+			\vfill
+			\vskip\baselineskip
+			\vfill
+			\blockB
+			\vfill
+		\end{column}
+
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%                          COLUMN 2                          %
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\begin{column}{.3\paperwidth}
+			\vfill
+			\blockC
+			\vfill
+			\vskip\baselineskip
+			\vfill
+			\blockD
+			\vfill
+		\end{column}
+
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%                          COLUMN 3                          %
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\begin{column}{.3\paperwidth}
+			\vfill
+			\blockE
+			\vfill
+			\vskip\baselineskip
+			\vfill
+			\blockF
+			\vfill
+		\end{column}
+	\end{columns}
+\end{frame}
+\end{document}
