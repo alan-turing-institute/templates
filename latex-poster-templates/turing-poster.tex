@@ -1,0 +1,113 @@
+\documentclass[a4paper, twocolumn, 12pt]{article}
+\usepackage[a4paper]{geometry}
+\usepackage{titling}
+\usepackage[small, raggedright, compact]{titlesec}
+\usepackage{microtype}
+\usepackage{moresize}
+\usepackage[rgb]{xcolor}
+\usepackage{tikz}
+%% Turing poster design
+%% ====================
+%%
+%% Fonts
+%% -----
+%% Our corporate brand is Neue Haas Unica Pro, but we don't have a general
+%% license to use it. Our corporate substitute font is Arial, perhaps because
+%% Windows has Arial. But Helvetica is closer in design to Neue Haas Unica Pro,
+%% and I don't think Arial is available on Linux by default.
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\renewcommand{\baselinestretch}{1.1}
+%%
+%% Layout
+%% ------
+%% The portrait Turing poster appears to use a 9 vertical x 21 horizontal
+%% grid. The actual measurements in the PowerPoint don't quite match, but
+%% presumably the gris is what was intended.
+\newlength{\gridv}\setlength{\gridv}{0.11111111111111111\paperheight}
+\newlength{\gridh}\setlength{\gridh}{0.04761904761904762\paperwidth}
+\geometry{hmargin=\gridh, columnsep=\gridh, top=\gridv, bottom=\gridh}
+%%
+%%
+%% Logo
+%% ----
+%%
+\definecolor{turingblue}{Hsb}{211,1,1}
+\pagestyle{empty}
+%%
+%% Title
+%% -----
+\setlength{\droptitle}{-2em}
+\pretitle{\rule{15\gridh}{4.6pt}\medskip\setlength{\rightskip}{5\gridh}\par%
+\begingroup\raggedright\Huge\bfseries}
+\posttitle{\endgroup\par\vskip 2em}
+\preauthor{\setlength{\rightskip}{5\gridh}\par\begingroup\raggedright\large}
+\postauthor{\endgroup\par\vskip 1em}
+\predate{\begingroup\raggedright\large}
+\postdate{\endgroup\par\vskip 2em}
+%%
+%% Section headers
+%% ---------------
+\titleformat{\section}{\titlerule[3.2pt]\bfseries\large}{\thesection}{1em}{}{}
+\titlespacing*{\section}{0em}{*4}{*1}
+%%
+\raggedright{}
+%%
+%% =============================================================================
+%% Actual content from here on down
+%%
+\title{Title, keep it short and to the point}
+\author{First and last name of poster presenter and supervisor}
+\date{}
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+%%
+%% Yes, you have to put the section header before the background image. Sorry.
+\section*{Outcomes}
+%%
+\begin{tikzpicture}[remember picture,overlay]
+\fill[fill=turingblue] (current page.north east) -- +(-17\gridh, 0) -- +(-2\gridh, -\gridv) -- +(0, -0.6\gridv) -- +(0,0);
+\node [above] (image) at (current page.north east) [xshift=-2\gridh,yshift=-0.6\gridv] {\includegraphics[height=0.4\gridv]{ATI_logo_white.eps}};
+\end{tikzpicture}
+Call me Ishmael. Some years ago—never mind how long precisely—having little or
+no money in my purse, and nothing particular to interest me on shore, I thought
+I would sail about a little and see the watery part of the world. It is a way I
+have of driving off the spleen and regulating the circulation. Whenever I find
+myself growing grim about the mouth; whenever it is a damp, drizzly November in
+my soul; whenever I find myself involuntarily pausing before coffin warehouses,
+and bringing up the rear of every funeral I meet; and especially whenever my
+hypos get such an upper hand of me, that it requires a strong moral principle to
+prevent me from deliberately stepping into the street, and methodically knocking
+people’s hats off—then, I account it high time to get to sea as soon as I
+can. This is my substitute for pistol and ball. With a philosophical flourish
+Cato throws himself upon his sword; I quietly take to the ship. There is nothing
+surprising in this. If they but knew it, almost all men in their degree, some
+time or other, cherish very nearly the same feelings towards the ocean with me.
+
+\section*{Clear/informative section heading}
+There now is your insular city of the Manhattoes, belted round by wharves as
+Indian isles by coral reefs—commerce surrounds it with her surf. Right and left,
+the streets take you waterward. Its extreme downtown is the battery, where that
+noble mole is washed by waves, and cooled by breezes, which a few hours previous
+were out of sight of land. Look at the crowds of water-gazers there.
+
+Circumambulate the city of a dreamy Sabbath afternoon. Go from Corlears Hook to
+Coenties Slip, and from thence, by Whitehall, northward. What do you see?—Posted
+like silent sentinels all around the town, stand thousands upon thousands of
+mortal men fixed in ocean reveries. Some leaning against the spiles; some seated
+upon the pier-heads; some looking over the bulwarks of ships from China; some
+high aloft in the rigging, as if striving to get a still better seaward
+peep. But these are all landsmen; of week days pent up in lath and plaster—tied
+to counters, nailed to benches, clinched to desks. How then is this? Are the
+green fields gone? What do they here?
+
+\section*{Clear/informative section heading}
+(Text, diagrams etc)
+
+\vfill
+\section*{Contact}
+
+James Geddes, \texttt{jgeddes@turing.ac.uk}.
+
+\end{document}
