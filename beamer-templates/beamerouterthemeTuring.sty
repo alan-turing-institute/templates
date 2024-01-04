@@ -32,9 +32,11 @@
 \setlength{\basefontsize}{0.02\paperheight}
 
 \newlength{\titlefontsize}
-\setlength{\titlefontsize}{6.875\basefontsize}
+\setlength{\titlefontsize}{4.375\basefontsize}
 \newlength{\subtitlefontsize}
 \setlength{\subtitlefontsize}{4.375\basefontsize}
+\newlength{\authorfontsize}
+\setlength{\authorfontsize}{3.325\basefontsize}
 \newlength{\frametitlesize}
 \setlength{\frametitlesize}{2.625\basefontsize}
 \newlength{\framesubtitlesize}
@@ -53,8 +55,9 @@
 \newcommand{\headinglineheightmultiplier}{1.2}
 \newcommand{\bodylineheightmultiplier}{1.4}
 
-\setbeamerfont{title}{size={\fontsize{\titlefontsize}{\titlefontsize}}}
+\setbeamerfont{title}{series=\bfseries,size={\fontsize{\titlefontsize}{\titlefontsize}}}
 \setbeamerfont{subtitle}{size={\fontsize{\subtitlefontsize}{\subtitlefontsize}}}
+\setbeamerfont{author}{size={\fontsize{\authorfontsize}{\authorfontsize}}}
 \setbeamerfont{frametitle}{series=\bfseries,size={\fontsize{\frametitlesize}{\frametitlesize}}}
 \setbeamerfont{imprint}{series=\mdseries,size={\fontsize{\frametitlesize}{\headinglineheightmultiplier\frametitlesize}}}
 \setbeamerfont{imprint}{series=\mdseries,size={\fontsize{\frametitlesize}{\headinglineheightmultiplier\frametitlesize}}}
