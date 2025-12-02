@@ -6,7 +6,14 @@
 	\begin{tikzpicture}
 	\useasboundingbox (0,0) rectangle(\paperwidth,\paperheight);
 	\fill[color=cornerleaf] (0,0) rectangle (\paperwidth,\paperheight);
-	\draw[fill=slidebg,color=slidebg] (0,0) -- (0 ,\paperheight) -- (8.75\gridblock,\paperheight) -- (16.5\gridblock,7.2\gridblock) -- (\paperwidth,1.2\gridblock) -- (\paperwidth,0) -- cycle;	
+	\ifnum\thepage=1\relax%
+		\node[anchor=north east,inner sep=0] at (1.0\paperwidth,1.0\paperheight) {
+			\includegraphics[height=0.89\paperheight,keepaspectratio]{\cornerimagefilename}
+		};
+		\node at (0.5\paperwidth,0.5\paperheight) {
+			\includegraphics[width=\paperwidth]{\logofilename}
+		};
+	\fi
 	\ifnum\thepage>1\relax%
 		\fill[slidebg,opacity=1] (0,0) rectangle(\paperwidth,\paperheight);
 	\fi
@@ -15,57 +22,26 @@
 
 % Title page
 \defbeamertemplate*{title page}{Turing}[1][]
-{ 
-	\vskip0.9\gridblock
-	 \begin{beamercolorbox}[wd=\textwidth,leftskip=0\textwidth,sep=0px,#1]{logo}
-    		\includegraphics[height=1.4\gridblock]{\logofilename}
-	\end{beamercolorbox}
-	\vskip1.75\gridblock
-	\begin{beamercolorbox}[wd=\textwidth,leftskip=0\textwidth,sep=0px,#1]{logo}
-		\begin{tikzpicture}
-			\fill[color=line] (0,0) rectangle(\textwidth,0.05\gridblock);
-		\end{tikzpicture}
-    \end{beamercolorbox}%
-	\vskip0.35\gridblock
-    \begin{beamercolorbox}[wd=\textwidth,leftskip=0\textwidth,sep=0px,#1]{title page header}
-      \usebeamerfont{title}\inserttitle\par%
-    \end{beamercolorbox}%
-	\vskip0.3\gridblock
-    \begin{beamercolorbox}[wd=\textwidth,leftskip=0\textwidth,sep=0px,#1]{title page header}
-      \usebeamerfont{subtitle}\insertsubtitle\par%
-    \end{beamercolorbox}%
-	\vskip0.3\gridblock
-    \begin{beamercolorbox}[wd=\textwidth,leftskip=0\textwidth,sep=0px,#1]{title page header}
-      \usebeamerfont{normal text}\insertauthor\par%
+{
+	\begin{tikzpicture}
+	\useasboundingbox (0,0) rectangle(\paperwidth,\paperheight);
+	\node[anchor=north west,inner sep=0] at (0.0\paperwidth,0.57\paperheight) {
+		\begin{beamercolorbox}[wd=0.53\textwidth,leftskip=0\textwidth,sep=0px,#1]{title page header}
+			\usebeamerfont{title}\inserttitle\par%
+		\end{beamercolorbox}%
+	};
+	\node[anchor=north west,inner sep=0] at (0.0\paperwidth,0.22\paperheight) {
+		\begin{beamercolorbox}[wd=0.53\textwidth,leftskip=0\textwidth,sep=0px,#1]{title page header}
+			\usebeamerfont{author}\insertauthor\par%
+		\end{beamercolorbox}%
+	};
+	\end{tikzpicture}
+	\vskip3.0\gridblock
+    \begin{beamercolorbox}[wd=0.53\textwidth,leftskip=0\textwidth,sep=0px,#1]{title page header}
+      \usebeamerfont{author}\insertauthor\par%
     \end{beamercolorbox}%
   \vfill
 }
-
-% Imprint slide
-\defbeamertemplate*{imprintpage}{Turing}[1][]
-{
-		\vskip0.6\gridblock
-		\begin{beamercolorbox}[wd=\textwidth,leftskip=0\textwidth,sep=0px]{logo}
-			\begin{tikzpicture}
-				\fill[color=line] (0,0) rectangle(\textwidth,0.05\gridblock);
-			\end{tikzpicture}
-    		\end{beamercolorbox}%
-		\vskip0.35\gridblock
-    		\begin{beamercolorbox}[wd=0.6\textwidth,leftskip=0\textwidth,sep=0px]{}
-		\usebeamerfont{imprint}%
-     		The Alan Turing Institute is the 
-			national centre for data science, 
-			headquartered at the British Library.
-    		\end{beamercolorbox}%
-		\vfill\vfill\vfill\vfill
-    		\begin{beamercolorbox}[wd=\textwidth,leftskip=0\textwidth,sep=0px]{}
-			\begin{figure}
-				\includegraphics[width=\textwidth,keepaspectratio]{sponsor-logos-banner.png}%				
-				%\includegraphics[width=\textwidth,keepaspectratio]{sponsor-logos-individual-borders.png}%May be preferred for dark theme
-			\end{figure}
-    		\end{beamercolorbox}%
-}
-\newcommand{\imprintpage}{\usebeamertemplate{imprintpage}}
 
 % Section divider page
 \AtBeginSection[]{
@@ -83,22 +59,6 @@
 	\end{frame}
 }
 
-% End slide
-\defbeamertemplate*{finalpage}{Turing}[1][]
-{
-		\vskip0.6\paperheight
-		\begin{beamercolorbox}[wd=\textwidth,leftskip=0\textwidth,sep=0px]{logo}
-			\begin{tikzpicture}
-				\fill[color=line] (0,0) rectangle(0.45\textwidth,0.05\gridblock);
-			\end{tikzpicture}
-    		\end{beamercolorbox}%
-		\vskip0.35\gridblock
-    		\begin{beamercolorbox}[wd=0.45\textwidth,leftskip=0\textwidth,sep=0px]{}
-			\usebeamerfont{imprint}turing.ac.uk\par\text{@turinginst}
-    		\end{beamercolorbox}%
-}
-\newcommand{\finalpage}{\usebeamertemplate{finalpage}}
-
 % Page title
 \setbeamertemplate{frametitle}
 {
@@ -110,28 +70,7 @@
 
 % Footer (all pages)
 \setbeamertemplate{footline}{
-{%
-\begin{beamercolorbox}[wd=0.9\textwidth,leftskip=0.05\textwidth,dp=0.7\gridblock]{footerline}
-	\begin{tikzpicture}
-		\fill[color=line] (0,0) rectangle(19\gridblock,0.015\gridblock);
-	\end{tikzpicture}
-	\vskip\footerfontsize
-	\begin{columns}[T,totalwidth=\textwidth]
-		\begin{column}{0.015\textwidth}
-		\end{column}%
-		\begin{column}{0.15\textwidth}
-			\hskip0.5\gridblock\insertdate
-		\end{column}%
-		\begin{column}{0.75\textwidth}
-			\insertinstitute
-			\vskip0.25\footerfontsize
-			\inserttitle
-		\end{column}%
-		\begin{column}{0.05\textwidth}
-			\insertframenumber
-		\end{column}%
-	\end{columns}
-\end{beamercolorbox}
+{% Empty footer
 }}
 
 
